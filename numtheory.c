@@ -7,7 +7,6 @@
 #include "randstate.h"
 
 //Computes the greatest common divisor of a and b
-//Cite: pseudo in asgn6 pdf
 void gcd(mpz_t g, mpz_t a, mpz_t b) {
     mpz_t temp_a, temp_b, temp_t;
     mpz_inits(temp_a, temp_b, temp_t, NULL);
@@ -25,7 +24,6 @@ void gcd(mpz_t g, mpz_t a, mpz_t b) {
 }
 
 //Performs fast modular exponentiation
-//Cite: pseudo in asgn6 pdf
 void pow_mod(mpz_t o, mpz_t a, mpz_t d, mpz_t n) {
     mpz_t v, p, p_sqr, v_times_p, temp_d, temp_n;
 
@@ -49,7 +47,6 @@ void pow_mod(mpz_t o, mpz_t a, mpz_t d, mpz_t n) {
     return;
 }
 
-//Cite: @Erik
 bool is_prime(mpz_t n, uint64_t iters) {
     //mpz_t n_minus_one, two, r, temp, a, upper_bound, y, temp2;
     mpz_t n_minus_one;
@@ -125,7 +122,6 @@ bool is_prime(mpz_t n, uint64_t iters) {
 }
 
 //Generates a new prime number stored in p
-//Cite: @Erik and @Christian
 void make_prime(mpz_t p, uint64_t bits, uint64_t iters) {
     mp_bitcnt_t mp_bits = bits;
     mpz_urandomb(p, state, mp_bits);
