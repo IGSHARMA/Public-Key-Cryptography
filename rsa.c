@@ -6,7 +6,6 @@
 #include "numtheory.h"
 #include "randstate.h"
 
-//Cite: Got help from @Christian and @Erik
 void rsa_make_pub(mpz_t p, mpz_t q, mpz_t n, mpz_t e, uint64_t nbits, uint64_t iters) {
     mpz_t totient, p_minus_one, q_minus_one, gcd_e_n;
     mpz_inits(p_minus_one, q_minus_one, gcd_e_n, totient, NULL);
@@ -65,7 +64,6 @@ void rsa_encrypt(mpz_t c, mpz_t m, mpz_t e, mpz_t n) {
     pow_mod(c, m, e, n);
 }
 
-//Cite: @Erik
 //Encrypts the contents of infile, writing the  encrypted contents to outfile
 void rsa_encrypt_file(FILE *infile, FILE *outfile, mpz_t n, mpz_t e) {
     mpz_t c, m;
@@ -89,7 +87,6 @@ void rsa_decrypt(mpz_t m, mpz_t c, mpz_t d, mpz_t n) {
     pow_mod(m, c, d, n);
 }
 
-//Cite: @Erik
 //Decrypts the contents of infile, writing the the decrypted contents to outfile
 void rsa_decrypt_file(FILE *infile, FILE *outfile, mpz_t n, mpz_t d) {
     mpz_t c, m;
